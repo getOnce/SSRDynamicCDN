@@ -6,7 +6,7 @@ const configFactory = require('../config/webpack.config');
 const devConfigFactory = require('../config/webpackDevServer.config');
 const config = configFactory('development');
 const compiler = webpack(config);
-console.log(JSON.stringify(devConfigFactory('development')));
+
 const devServer = new WebpackDevServer(
     devConfigFactory('development'),
     compiler,
