@@ -9,3 +9,7 @@ A1 ：
   c、webpack-dev-server中devMiddleware中的publicPath = publicPath.slice(0, -1),
 
 ```
+
+```
+注意：背景图的地址变化
+```
