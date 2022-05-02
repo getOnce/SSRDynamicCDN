@@ -4,7 +4,7 @@ const app = new Koa();
 const router = new Router();
 
 router.get('/', async (ctx, next) => {
-  ctx.body = `
+    ctx.body = `
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -19,10 +19,10 @@ router.get('/', async (ctx, next) => {
     <script src="http://127.0.0.1:1000/myapp/static/js/app.js"></script>
   </body>
   </html>
-  `
+  `;
 });
 
 app.use(router.routes());
 app.listen(3000, () => {
-  console.log(`node server http://localhost:3000 已启动;;;`)
+    console.log(`node server http://localhost:3000 已启动`);
 });

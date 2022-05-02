@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-}
+  "editor.fontWeight": "normal",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.useEditorConfig": false
 }
