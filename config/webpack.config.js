@@ -15,15 +15,15 @@ module.exports = function (webpackEnv, publicPath = '/myapp/') {
             : isEnvDevelopment && 'development',
         entry: resolveApp('src/browser/index.tsx'),
         output: {
-            path: resolveApp('dist'),
+            path: resolveApp(`dist${publicPath}`),
             filename: 'static/js/app.js',
             chunkFilename: 'static/js/[name].[contenthash:8].chunk.js',
             assetModuleFilename: 'static/media/[name].[hash][ext]',
-            publicPath,
+            publicPath: 'auto',
         },
         resolve: {
             modules: ['node_modules'],
-            extensions: ['.ts', '.tsx', '.js'],
+            extensions: ['.ts', '.tsx', '.js', '.jsx'],
         },
         module: {
             rules: [
