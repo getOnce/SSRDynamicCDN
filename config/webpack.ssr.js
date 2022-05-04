@@ -106,7 +106,7 @@ module.exports = function (webpackEnv, publicPath = '/myapp/') {
                                     options: {
                                         name: `${publicPath.slice(
                                             1,
-                                        )}js/../../static/media/[name].[hash][ext]`,
+                                        )}static/media/[name].[hash].[ext]`,
                                     },
                                 },
                             ],
