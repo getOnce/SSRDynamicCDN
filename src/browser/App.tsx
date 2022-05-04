@@ -1,15 +1,14 @@
 import { lazy } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 const Bar = lazy(() => import('./lazyload/Bar'));
 
 function App() {
     return (
         <div className="App">
-            <Bar />
             <div className="testImgBg"></div>
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
+                {/* <img src={logo} className="App-logo" alt="logo" /> */}
                 <p>
                     Edit <code>src/App.tsx</code> and save to reload.
                 </p>
@@ -22,6 +21,7 @@ function App() {
                     Learn React
                 </a>
             </header>
+            <Bar />
         </div>
     );
 }

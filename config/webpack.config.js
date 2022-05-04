@@ -128,5 +128,17 @@ module.exports = function (webpackEnv, publicPath = '/myapp/') {
                 chunkFilename: `static/css/[name].css`,
             }),
         ],
+        optimization: {
+            splitChunks: {
+                cacheGroups: {
+                    styles: {
+                        name: 'app',
+                        type: 'css/mini-extract',
+                        chunks: 'all',
+                        enforce: true,
+                    },
+                },
+            },
+        },
     };
 };

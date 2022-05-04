@@ -13,3 +13,8 @@ A1 ：
 ```
 注意：背景图的地址变化
 ```
+
+# server side render 更改内容
+
+1. render 改成 hydrateRoot
+2. ssr 配置

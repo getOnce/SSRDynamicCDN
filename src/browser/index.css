@@ -7,8 +7,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 .testImgBg {
-    background: url(./test.jpg) no-repeat left top;
-    background-size: contain;
+    /* background: url(./test.jpg) no-repeat left top; */
+    /* background-size: contain; */
     width: 100%;
     height: 200px;
 }
