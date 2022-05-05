@@ -6,17 +6,16 @@ const ssr = require(`${process.cwd()}/dist/ssr/app.js`);
 router.get('/', async (ctx, next) => {
     await new Promise((resolve, reject) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const staticUrl = 'http://127.0.0.1:1000';
         const { pipe, abort } = ssr({
             title: '测试动态CDN',
-            cssEntry: `http://127.0.0.1:1000/myapp/static/css/app.css`,
-            staticUrl: `http://127.0.0.1:1000`,
+            cssEntry: `${staticUrl}/myapp/static/css/app.css`,
+            staticUrl,
             options: {
-                bootstrapScripts: [
-                    `http://127.0.0.1:1000/myapp/static/js/app.js`,
-                ],
-                onError() {
-                    console.log(`onError`);
-                    reject({ code: 501 });
+                bootstrapScripts: [`${staticUrl}/myapp/static/js/app.js`],
+                onError(e: Error) {
+                    console.log(`onError e.message : `, e.message);
+                    reject({ code: 500 });
                 },
                 onAllReady() {
                     console.log(`onShellReady`);
@@ -29,8 +28,8 @@ router.get('/', async (ctx, next) => {
                     resolve({ code: 200 });
                     console.log(`onShellReady done`);
                 },
-                onShellError() {
-                    console.log(`onShellError`);
+                onShellError(e: Error) {
+                    console.log(`onShellError e.message : `, e.message);
                     reject({ code: 500 });
                 },
             },

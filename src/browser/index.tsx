@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 ReactDOM.hydrateRoot(
     document.getElementById('root') as HTMLElement,
     <React.StrictMode>
-        <App />
+        <Suspense fallback={<div>Loading...</div>}>
+            <App />
+        </Suspense>
     </React.StrictMode>,
 );
 

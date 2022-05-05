@@ -83,7 +83,7 @@ module.exports = function (webpackEnv, publicPath = '/myapp/') {
                                 emit: false,
                                 filename: `${publicPath.slice(
                                     1,
-                                )}js/../static/media/[name].[hash][ext]`,
+                                )}static/js/../../static/media/[name].[hash][ext]`,
                             },
                         },
                         {
@@ -104,9 +104,16 @@ module.exports = function (webpackEnv, publicPath = '/myapp/') {
                                 {
                                     loader: require.resolve('file-loader'),
                                     options: {
-                                        name: `${publicPath.slice(
-                                            1,
-                                        )}static/media/[name].[hash].[ext]`,
+                                        name: `static/media/[name].[hash].[ext]`,
+                                        postTransformPublicPath: (p) => {
+                                            const relativePublicPath =
+                                                publicPath.slice(1);
+                                            return `${p.replace(
+                                                'static/media/',
+                                                relativePublicPath +
+                                                    'static/js/../../static/media/',
+                                            )}`;
+                                        },
                                     },
                                 },
                             ],
