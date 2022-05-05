@@ -17,7 +17,6 @@ const Render = function ({
     jsEntry,
 }: Params) {
     __webpack_public_path__ = `${staticUrl}/`;
-    console.log(`__webpack_public_path__ =======>`, __webpack_public_path__);
     return ReactDOM.renderToPipeableStream(
         <React.StrictMode>
             <Html title={title} cssEntry={cssEntry}>
