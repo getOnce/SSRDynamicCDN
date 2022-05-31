@@ -1,5 +1,5 @@
 import './bar.css';
-import test from '../test.jpg';
+import test from '../large.png';
 export default function Bar() {
     return (
         <div className="bar">
