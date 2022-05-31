@@ -3,7 +3,7 @@ import test from '../large.png';
 export default function Bar() {
     return (
         <div className="bar">
-            This is bar ...
+            <div>This is a lazyload bar ...</div>
             <img src={test} />
         </div>
     );
